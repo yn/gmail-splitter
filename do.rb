@@ -62,8 +62,7 @@ class GmailSplitter
     return [:ok, :already_ok] if result == :ok
     if result == :not_ok && reason == :needs_apply
       fetch_data_seq.each do |fetch_data|
-        puts fetch_data.attr["X-GM-LABELS"].inspect
-        #store(fetch_data.seqno, "X-GM-LABELS", fetch_data.attr["X-GM-LABELS"] << thread_id_label(t))
+        store(fetch_data.seqno, "X-GM-LABELS", fetch_data.attr["X-GM-LABELS"] << thread_id_label(t))
       end
       return check_thread_id_label(t).first == :ok ? [:ok, :applied] : [:not_ok, :apply_failed]
     else

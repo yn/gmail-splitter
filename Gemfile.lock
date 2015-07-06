@@ -1,5 +1,6 @@
-PATH
-  remote: /Users/yn/code/mine/gmail
+GIT
+  remote: git@github.com:yn/gmail.git
+  revision: 6170dba951567c4774f835b728209707af55a9ee
   specs:
     gmail (0.5.0)
       gmail_xoauth (>= 0.3.0)
